@@ -183,6 +183,7 @@ const counter2 = yield select(counter2Selectors.getCounterState);
 ```
 ## Conclusion
 This approach could be used for simple widgets like filters, searches etc...
+
 It is simple and important to make such components covered by unit tests.
 ```javascript
 test.each([["green", "red", "red"], ["green", "green", "green"]])(
@@ -204,7 +205,7 @@ const featureReducer: combineReducers({
   taxonomiesFilter: makeSearchFilterReducer(taxonomiesFilterId),
   labelsFilter: makeSearchFilterReducer(labelsFilterId),
   selectedFilter: makeCheckboxFilterReducer(selectedFilterId),
-  sidebar: makeSidebarReducer(sidebarId),
+  sidebar: sidebarReducer,
   sharingComponent: makeSharingComponentReducer(sharingComponentId),
   ...
 })
