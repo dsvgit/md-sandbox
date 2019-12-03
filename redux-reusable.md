@@ -5,7 +5,7 @@ There is a simple application with two counters. The counters have two props: `c
 
 ![alt app_demo](https://github.com/nrg-soft/eas-frontend/blob/master/doc/redux-level-reusing-counters-app.gif?raw=true)
 
-_Appliction in codesandbox: [Reusable redux counters application](https://codesandbox.io/s/reusable-redux-phi5g)_
+_The appliction in codesandbox: [Reusable redux counters application](https://codesandbox.io/s/reusable-redux-phi5g)_
 
 ## Component logic
 The main parts of a _redux_ component are: 
