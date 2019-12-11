@@ -121,7 +121,9 @@ export const makeCounterReducer = counterId => (
 ```
 As you can see this _new_ reducer will be called only if `action.meta.conterId` matches `counterId` from _closure_.
 ### Selectors
-We use `globalizeSelectors` function and put `lens` into _closure_ to get certain part of state.
+In order to write local selectors we use utility `globalizeSelectors`, which takes `lens` and selectors.
+Then we are able to pass global state to new generated selectors and selector will take local state depending on `lens`.
+We put `lens` into _closure_ to get certain part of state.
 ```javascript
 const getCounterState = state => state;
 
