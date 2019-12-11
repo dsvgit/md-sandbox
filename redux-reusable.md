@@ -33,14 +33,14 @@ setColor(counterId, color) {
 ```
 
 ### Reducer (`src/shared/reducer.js`)
-Each reducer describes single counter logic. In the following code reducer describes what state should be returned after `counterTypes.SET_COLOR` action.
+Each reducer describes logic of a single counter. In the following code reducer describes what state should be returned after `counterTypes.SET_COLOR` action.
 ```javascript
-export const conterInitialState = {
+export const counterInitialState = {
   count: 0,
   color: "green"
 };
 
-export const counterReducer = (state = conterInitialState, action) => {
+export const counterReducer = (state = counterInitialState, action) => {
   switch (action.type) {
     ...
     case counterTypes.SET_COLOR: {
@@ -58,7 +58,7 @@ In this example we have only one selector which returns counter state as it is:
 const getCounterState = state => state;
 ```
 ### Component (`src/shared/components/index.js`)
-There is a simple pure component, which only maps props into react elements:
+This is a pure component, which only maps props into react elements:
 ```jsx
 const Counter = ({
   count,
@@ -94,7 +94,7 @@ const Counter = ({
 ```
 
 ## Preparing component to be reusable
-In order to reuse the counter component we should do some stuff before.
+In order to reuse the counter component we should prepare it.
 For each part of the `redux` logic we should create kind of _factory_.
 ### Actions
 We already created actions with `counterId` argument, and put it into `meta`. Let's create a helper function to map each action to action with defined `counterId`. It is done to skip `counterId` each time we dispatch actions (especially when we dispatch actions right from the counter  component) .
